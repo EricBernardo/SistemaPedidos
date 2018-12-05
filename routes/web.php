@@ -23,5 +23,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
 
-    Route::resource('client', 'ClientController');
+    Route::get('client', 'ClientController@index');
+    Route::get('client/create', 'ClientController@create');
+    Route::post('client/store', 'ClientController@store');
+
 });

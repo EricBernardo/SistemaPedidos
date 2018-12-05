@@ -18,24 +18,15 @@
                 <div class="box-body">
                     <table class="table table-bordered">
                         <tbody>
-                        <tr>
-                            <th style="width: 10px">#</th>
-                            <th>CNPJ</th>
-                            <th>{{ trans('adminlte_lang::message.title') }}</th>
-                            <th style="width: 40px">-</th>
-                            <th style="width: 40px">-</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>163.645.67765/76</td>
-                            <td>Cliente 1</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-sm btn-flat">Editar</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger btn-sm btn-flat">Excluir</button>
-                            </td>
-                        </tr>
+                        @foreach($clients as $client)
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>{{$client['cnpj']}}</th>
+                                <th>{{$client['title']}}</th>
+                                <th style="width: 40px">-</th>
+                                <th style="width: 40px">-</th>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -49,6 +40,9 @@
                         <li><a href="#">»</a></li>
                     </ul>
                 </div>
+
+                {{$clients->links()}}
+
             </div>
             <!-- /.box -->
         </div>

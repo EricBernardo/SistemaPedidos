@@ -129,4 +129,11 @@ return [
     'fullname'                => 'Nome completo',
     'client'                  => 'Cliente',
     'title'                   => 'Título',
+    'phone'                   => 'Telefone',
+    'state'                   => 'Estado',
+    'city'                    => 'Cidade',
+    'cnpj'                    => 'CNPJ',
+    'neighborhood'            => 'Bairro',
+    'number'                  => 'Número',
+    'complement'              => 'Complemento',
 ];
