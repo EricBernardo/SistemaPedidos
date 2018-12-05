@@ -27,8 +27,8 @@ class ClientController extends Controller
 
     public function index()
     {
-        $clients = $this->services->paginate();
-        return view('adminlte::client.index', compact('clients'));
+        $results = $this->services->paginate();
+        return view('adminlte::client.index', compact('results'));
     }
 
     public function create()
@@ -38,45 +38,23 @@ class ClientController extends Controller
 
     public function store(ClientRequest $request)
     {
-die("FIM");
-        return $this->service->create($request->all());
-
-    }
-
-    public function show($id)
-    {
-
-        $result = $this->repository->find($id);
-
-        if (request()->wantsJson()) {
-            return $result;
-        }
-
-        return view('page.company.show', compact('result'));
-
+        return $this->services->create($request->all());
     }
 
     public function edit($id)
     {
-
-        $result = $this->repository->find($id);
-
-        return view('page.company.edit', compact('result'));
-
+        $result = $this->services->show($id);
+        return view('adminlte::client.edit', compact('result'));
     }
 
-    public function update(CompanyUpdateRequest $request, $id)
+    public function update(ClientRequest $request, $id)
     {
-
-        return $this->service->update($request->all(), $id);
-
+        return $this->services->update($request->all(), $id);
     }
 
     public function destroy($id)
     {
-
-        return $this->service->delete($id);
-
+        return $this->services->delete($id);
     }
 
 

@@ -17,17 +17,17 @@ class DefaultServices
         }
 
         $response = [
-            'message' => 'Updated.',
+            'message' => 'Created.',
         ];
 
         return redirect()->back()->with('success', $response['message']);
 
     }
 
-    public function update($data, $uuid)
+    public function update($data, $id)
     {
 
-        $result = $this->entity::where('uuid', $uuid)->first();
+        $result = $this->entity::where('id', $id)->first();
 
         $result->update($data);
 
@@ -58,7 +58,7 @@ class DefaultServices
             'message' => 'Deleted.',
         ];
 
-        redirect()->back()->with('success', $response['message']);
+        return redirect()->back()->with('success', $response['message']);
 
     }
 
@@ -69,12 +69,12 @@ class DefaultServices
 
     public function show($id)
     {
-        return $this->entity::where('id', '=', $id)->get();
+        return $this->entity::where('id', '=', $id)->get()->first();
     }
 
     public function paginate()
     {
-        return $this->entity::paginate();
+        return $this->entity::paginate(1);
     }
 
 }

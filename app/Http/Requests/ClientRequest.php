@@ -24,7 +24,14 @@ class ClientRequest extends FormRequest
     public function rules()
     {
         return [
-            'titule' => 'required',
+            'title' => 'required',
+            'cnpj' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'neighborhood' => 'required',
+            'number' => 'required|integer',
         ];
     }
 }

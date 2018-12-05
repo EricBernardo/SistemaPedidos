@@ -16,32 +16,62 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+
+                    @include('adminlte::components.errors')
+                    @include('adminlte::components.message')
+
                     <table class="table table-bordered">
                         <tbody>
-                        @foreach($clients as $client)
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>CNPJ</th>
+                            <th>Título</th>
+                            <th style="width: 10px">-</th>
+                            <th style="width: 10px">-</th>
+                        </tr>
+                        @foreach($results as $result)
                             <tr>
-                                <th style="width: 10px">#</th>
-                                <th>{{$client['cnpj']}}</th>
-                                <th>{{$client['title']}}</th>
-                                <th style="width: 40px">-</th>
-                                <th style="width: 40px">-</th>
+                                <td style="width: 10px">{{$result['id']}}</td>
+                                <td>{{$result['cnpj']}}</td>
+                                <td>{{$result['title']}}</td>
+                                <td>
+                                    <a href="{{ route('client.edit', [ 'id' => $result['id'] ]) }}"
+                                       class="btn btn-primary btn-sm">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        {{ __('Edit') }}
+                                    </a>
+                                </td>
+                                <td>
+
+                                    <form method="POST"
+                                          action="{{ route('client.destroy', [ 'id' => $result['id'] ]) }}"
+                                          class="display-inline" role="form">
+
+                                        <input type="hidden" name="_method" value="DELETE">
+
+                                        {{ csrf_field() }}
+
+                                        <button type="submit" class="btn btn-danger btn-sm" title="{{ __('Destroy') }}"
+                                                data-destroy>
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                            {{ __('Destroy') }}
+                                        </button>
+
+                                    </form>
+
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer clearfix">
-                    <ul class="pagination pagination-sm no-margin pull-right">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                </div>
 
-                {{$clients->links()}}
+                <div class="box-footer clearfix">
+                    <div class="pull-right">
+                        {{$results->links()}}
+                    </div>
+                </div>
 
             </div>
             <!-- /.box -->
