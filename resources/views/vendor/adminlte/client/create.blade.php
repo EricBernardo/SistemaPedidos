@@ -12,7 +12,7 @@
 
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">Cadastro</h3>
+                    <h3 class="box-title">{{ trans('adminlte_lang::message.register') }}</h3>
                 </div>
                 <div class="box-body">
 
@@ -71,7 +71,11 @@
                             </div>
 
                             <div class="form-group col-md-12">
-                                <input type="submit" class="btn btn-info" value="Salvar"/>
+                                <a href="{{ route('client.index') }}" class="btn btn-default pull-left">
+                                    {{ trans('adminlte_lang::message.back') }}
+                                </a>
+                                <input type="submit" class="btn btn-info pull-right"
+                                       value="{{ trans('adminlte_lang::message.save') }}"/>
                             </div>
 
                         </div>

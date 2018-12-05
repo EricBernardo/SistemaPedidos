@@ -136,4 +136,9 @@ return [
     'neighborhood'            => 'Bairro',
     'number'                  => 'Número',
     'complement'              => 'Complemento',
+    'listing'                 => 'Listagem',
+    'create'                  => 'Criar',
+    'save'                    => 'Salvar',
+    'edit'                    => 'Editar',
+    'back'                    => 'Voltar',
 ];

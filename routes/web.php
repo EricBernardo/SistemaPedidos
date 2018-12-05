@@ -23,11 +23,15 @@ Route::group(['middleware' => 'auth'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
 
-    Route::get('client', 'ClientController@index');
-    Route::get('client/create', 'ClientController@create');
+    Route::get('client', 'ClientController@index')->name('client.index');
+    Route::get('client/create', 'ClientController@create')->name('client.create');
     Route::get('client/edit/{id}', 'ClientController@edit')->name('client.edit');
     Route::put('client/update/{id}', 'ClientController@update');
     Route::post('client/store', 'ClientController@store');
     Route::delete('client/delete/{id}', 'ClientController@destroy')->name('client.destroy');
 
+});
+
+Route::get("cep/{cep}", function ($cep) {
+    return cep($cep)->toJson()->result();
 });
