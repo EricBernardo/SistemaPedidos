@@ -30,8 +30,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('client/store', 'ClientController@store');
     Route::delete('client/delete/{id}', 'ClientController@destroy')->name('client.destroy');
 
-});
+    Route::get("cep/{cep}", function ($cep) {
+        return cep($cep)->toJson()->result();
+    });
 
-Route::get("cep/{cep}", function ($cep) {
-    return cep($cep)->toJson()->result();
+    Route::get('cities/{id}', function ($id) {
+        return \App\Models\City::orderBy('name')->where('state_id', '=', $id)->get(['id', 'name']);
+    });
+
 });

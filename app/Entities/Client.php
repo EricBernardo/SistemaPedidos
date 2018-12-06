@@ -11,11 +11,13 @@ class Client extends Model
         'cnpj',
         'address',
         'phone',
-        'state',
-        'city',
+        'state_id',
+        'city_id',
         'neighborhood',
         'number',
         'complement',
+        'state_registration',
+        'cep'
     ];
 
 }

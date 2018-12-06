@@ -38,19 +38,39 @@
                             </div>
 
                             <div class="form-group col-md-6">
+                                <label>{{ trans('adminlte_lang::message.state_registration') }}:</label>
+                                <input type="text" name="state_registration" class="form-control"
+                                       value="{{ $result['state_registration'] }}">
+                            </div>
+
+                            <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.phone') }}:</label>
                                 <input type="text" name="phone" value="{{$result['phone']}}" class="form-control">
                             </div>
 
+                            <div class="form-group col-md-6">
+                                <label>{{ trans('adminlte_lang::message.cep') }}:</label>
+                                <input type="text" name="cep" class="form-control" value="{{$result['cep']}}">
+                            </div>
+
                             <div class="form-group col-xs-4 col-md-2">
                                 <label>{{ trans('adminlte_lang::message.state') }}:</label>
-                                <input type="text" name="state" value="{{$result['state']}}" class="form-control"
-                                       minlength="2" maxlength="2">
+                                <select class="form-control" name="state_id">
+                                    <option value="">Selecione</option>
+                                    @foreach($states as $state)
+                                        <option value="{{$state['id']}}" {{$state['id'] == $result['state_id'] ? 'selected' : ''}}>{{$state['abbr']}}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group col-xs-8 col-md-4">
                                 <label>{{ trans('adminlte_lang::message.city') }}:</label>
-                                <input type="text" name="city" value="{{$result['city']}}" class="form-control">
+                                <select class="form-control" name="city_id">
+                                    <option value="">Selecione</option>
+                                    @foreach($cities as $city)
+                                        <option value="{{$city['id']}}" {{$city['id'] == $result['city_id'] ? 'selected' : ''}}>{{$city['name']}}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group col-md-6">
@@ -76,8 +96,11 @@
                             </div>
 
                             <div class="form-group col-md-12">
-                                <input type="submit" class="btn btn-info pull-right" value="{{ trans('adminlte_lang::message.save') }}"/>
-                                <input type="submit" class="btn btn-info pull-left" value="{{ trans('adminlte_lang::message.save') }}"/>
+                                <a href="{{ route('client.index') }}" class="btn btn-default pull-left">
+                                    {{ trans('adminlte_lang::message.back') }}
+                                </a>
+                                <input type="submit" class="btn btn-info pull-right"
+                                       value="{{ trans('adminlte_lang::message.save') }}"/>
                             </div>
 
                         </div>

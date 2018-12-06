@@ -23,14 +23,19 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active">
+            <li>
                 <a href="{{ url('home') }}"><i class='fa fa-link'></i>
                     <span>{{ trans('adminlte_lang::message.home') }}</span>
                 </a>
             </li>
-            <li class="active">
+            <li class="{{ request()->is(['client', 'client/*'])? 'active' : '' }}">
                 <a href="{{ url('client') }}"><i class='fa fa-building'></i>
-                    <span>{{ trans('adminlte_lang::message.client') }}</span>
+                    <span>{{ trans('adminlte_lang::message.clients') }}</span>
+                </a>
+            </li>
+            <li class="{{ request()->is(['product', 'product/*'])? 'active' : '' }}">
+                <a href="{{ url('product') }}"><i class='fa fa-bars'></i>
+                    <span>{{ trans('adminlte_lang::message.products') }}</span>
                 </a>
             </li>
         </ul><!-- /.sidebar-menu -->

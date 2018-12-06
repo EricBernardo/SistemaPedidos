@@ -36,15 +36,15 @@
                         <tbody>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>CNPJ</th>
+                            <th class="hidden-xs">CNPJ</th>
                             <th>Título</th>
-                            <th style="width: 10px">-</th>
-                            <th style="width: 10px">-</th>
+                            <th>-</th>
+                            <th>-</th>
                         </tr>
                         @foreach($results as $result)
                             <tr>
                                 <td style="width: 10px">{{$result['id']}}</td>
-                                <td>{{$result['cnpj']}}</td>
+                                <td class="hidden-xs">{{$result['cnpj']}}</td>
                                 <td>{{$result['title']}}</td>
                                 <td>
                                     <a href="{{ route('client.edit', [ 'id' => $result['id'] ]) }}"

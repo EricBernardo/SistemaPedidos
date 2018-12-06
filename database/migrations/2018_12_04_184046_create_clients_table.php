@@ -21,9 +21,13 @@ class CreateClientsTable extends Migration
             $table->string('neighborhood');
             $table->integer('number');
             $table->string('complement')->nullable();
+            $table->string('state_registration')->nullable();
             $table->string('phone');
-            $table->char('state', 2);
-            $table->string('city');
+            $table->string('cep', 9);
+            $table->unsignedInteger('state_id');
+            $table->foreign('state_id')->references('id')->on('states')->delete('cascade')->update('cascade');
+            $table->unsignedInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities')->delete('cascade')->update('cascade');
             $table->timestamps();
             $table->index(['cnpj']);
         });

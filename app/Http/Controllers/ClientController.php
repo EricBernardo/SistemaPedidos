@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ClientRequest;
+use App\Models\City;
+use App\Models\State;
 use App\Services\ClientServices;
 
 /**
@@ -17,7 +19,7 @@ class ClientController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param ClientServices $services
      */
     public function __construct(ClientServices $services)
     {
@@ -33,7 +35,8 @@ class ClientController extends Controller
 
     public function create()
     {
-        return view('adminlte::client.create');
+        $states = State::orderBy('abbr')->get(['id', 'abbr']);
+        return view('adminlte::client.create', compact('states'));
     }
 
     public function store(ClientRequest $request)
@@ -44,7 +47,9 @@ class ClientController extends Controller
     public function edit($id)
     {
         $result = $this->services->show($id);
-        return view('adminlte::client.edit', compact('result'));
+        $states = State::orderBy('abbr')->get(['id', 'abbr']);
+        $cities = City::where('state_id', '=', $result['state_id'])->orderBy('name')->get(['id', 'name']);
+        return view('adminlte::client.edit', compact('result', 'states', 'cities'));
     }
 
     public function update(ClientRequest $request, $id)
