@@ -2,79 +2,55 @@
 
 namespace App\Services;
 
-class DefaultServices
+use App\Entities\Product;
+
+class ProductServices extends DefaultServices
 {
-
-    protected $entity;
-
+    
+    public function __construct()
+    {
+        $this->entity = Product::class;
+    }
+    
     public function create($data)
     {
-
+        
+        $data['price'] = str_replace(',', '.', (str_replace('.', '', $data['price'])));
+        
         $result = $this->entity::create($data);
-
+        
         if (request()->wantsJson()) {
             return $result;
         }
-
+        
         $response = [
             'message' => 'Created.',
         ];
-
+        
         return redirect()->back()->with('success', $response['message']);
-
+        
     }
-
+    
     public function update($data, $id)
     {
-
+        
         $result = $this->entity::where('id', $id)->first();
-
+        
+        $data['price'] = str_replace(',', '.', (str_replace('.', '', $data['price'])));
+        
         $result->update($data);
-
+        
         if (request()->wantsJson()) {
             return $result;
         }
-
+        
         $response = [
             'message' => 'Updated.',
         ];
-
+        
         return redirect()->back()->with('success', $response['message']);
-
+        
     }
-
-    public function delete($id)
-    {
-
-        $result = $this->entity::where('id', $id);
-
-        $result->delete();
-
-        if (request()->wantsJson()) {
-            return null;
-        }
-
-        $response = [
-            'message' => 'Deleted.',
-        ];
-
-        return redirect()->back()->with('success', $response['message']);
-
-    }
-
-    public function all()
-    {
-        return $this->entity::all();
-    }
-
-    public function show($id)
-    {
-        return $this->entity::where('id', '=', $id)->get()->first();
-    }
-
-    public function paginate()
-    {
-        return $this->entity::paginate();
-    }
-
+    
 }
+

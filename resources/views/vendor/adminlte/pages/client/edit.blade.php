@@ -12,83 +12,87 @@
 
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">{{ trans('adminlte_lang::message.register') }}</h3>
+                    <h3 class="box-title">{{ trans('adminlte_lang::message.edit') }}</h3>
                 </div>
                 <div class="box-body">
 
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
-                    {!! Session::get('post') !!}
-                    <form method="POST" action="{{ url('client/store') }}">
+
+                    <form method="POST" action="{{ url('client/update/'. $result['id']) }}">
+
+                        @method('PUT')
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="row">
 
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.cnpj') }}:</label>
-                                <input type="text" name="cnpj" class="form-control" value="{{ old('cnpj') }}">
+                                <input type="text" name="cnpj" value="{{$result['cnpj']}}" class="form-control">
                             </div>
 
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.title') }}:</label>
-                                <input type="text" name="title" class="form-control" value="{{ old('title') }}">
+                                <input type="text" name="title" value="{{$result['title']}}" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.state_registration') }}:</label>
                                 <input type="text" name="state_registration" class="form-control"
-                                       value="{{ old('state_registration') }}">
+                                       value="{{ $result['state_registration'] }}">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.phone') }}:</label>
-                                <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
+                                <input type="text" name="phone" value="{{$result['phone']}}" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.cep') }}:</label>
-                                <input type="text" name="cep" class="form-control" value="{{ old('cep') }}">
+                                <input type="text" name="cep" class="form-control" value="{{$result['cep']}}">
                             </div>
 
                             <div class="form-group col-xs-4 col-md-2">
                                 <label>{{ trans('adminlte_lang::message.state') }}:</label>
-                                <select class="form-control" name="state_id" data-value="{{old('state_id')}}">
+                                <select class="form-control" name="state_id">
                                     <option value="">Selecione</option>
                                     @foreach($states as $state)
-                                        <option value="{{$state['id']}}">{{$state['abbr']}}</option>
+                                        <option value="{{$state['id']}}" {{$state['id'] == $result['state_id'] ? 'selected' : ''}}>{{$state['abbr']}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group col-xs-8 col-md-4">
                                 <label>{{ trans('adminlte_lang::message.city') }}:</label>
-                                <select class="form-control" name="city_id" data-value="{{old('city_id')}}" data-text="">
+                                <select class="form-control" name="city_id">
                                     <option value="">Selecione</option>
-                                    <option value="">Selecione um estado</option>
+                                    @foreach($cities as $city)
+                                        <option value="{{$city['id']}}" {{$city['id'] == $result['city_id'] ? 'selected' : ''}}>{{$city['name']}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.address') }}:</label>
-                                <input type="text" name="address" class="form-control" value="{{ old('address') }}">
+                                <input type="text" name="address" value="{{$result['address']}}" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.neighborhood') }}:</label>
-                                <input type="text" name="neighborhood" class="form-control"
-                                       value="{{ old('neighborhood') }}">
+                                <input type="text" name="neighborhood" value="{{$result['neighborhood']}}"
+                                       class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.number') }}:</label>
-                                <input type="number" name="number" class="form-control" value="{{ old('number') }}">
+                                <input type="number" name="number" value="{{$result['number']}}" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.complement') }}:</label>
-                                <input type="text" name="complement" class="form-control"
-                                       value="{{ old('complement') }}">
+                                <input type="text" name="complement" value="{{$result['complement']}}"
+                                       class="form-control">
                             </div>
 
                             <div class="form-group col-md-12">

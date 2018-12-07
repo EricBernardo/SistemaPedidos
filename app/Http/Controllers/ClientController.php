@@ -30,13 +30,13 @@ class ClientController extends Controller
     public function index()
     {
         $results = $this->services->paginate();
-        return view('adminlte::client.index', compact('results'));
+        return view('adminlte::pages.client.index', compact('results'));
     }
 
     public function create()
     {
         $states = State::orderBy('abbr')->get(['id', 'abbr']);
-        return view('adminlte::client.create', compact('states'));
+        return view('adminlte::pages.client.create', compact('states'));
     }
 
     public function store(ClientRequest $request)
@@ -49,7 +49,7 @@ class ClientController extends Controller
         $result = $this->services->show($id);
         $states = State::orderBy('abbr')->get(['id', 'abbr']);
         $cities = City::where('state_id', '=', $result['state_id'])->orderBy('name')->get(['id', 'name']);
-        return view('adminlte::client.edit', compact('result', 'states', 'cities'));
+        return view('adminlte::pages.client.edit', compact('result', 'states', 'cities'));
     }
 
     public function update(ClientRequest $request, $id)

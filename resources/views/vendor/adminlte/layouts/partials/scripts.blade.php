@@ -6,6 +6,8 @@
 
 <script src="{{ asset('/plugins/input-mask/jquery.inputmask.js') }}" type="text/javascript"></script>
 
+<script src="{{ asset('/plugins/plentz-maskmoney/jquery.maskMoney.js') }}" type="text/javascript"></script>
+
 <script src="{{ asset('/js/default.js') . '?v=' . time() }}" type="text/javascript"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

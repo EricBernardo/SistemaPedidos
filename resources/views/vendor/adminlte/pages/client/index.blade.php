@@ -36,8 +36,8 @@
                         <tbody>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th class="hidden-xs">CNPJ</th>
-                            <th>Título</th>
+                            <th class="hidden-xs">{{ trans('adminlte_lang::message.cnpj') }}</th>
+                            <th>{{ trans('adminlte_lang::message.title') }}</th>
                             <th>-</th>
                             <th>-</th>
                         </tr>
@@ -63,7 +63,7 @@
 
                                         {{ csrf_field() }}
 
-                                        <button type="submit" class="btn btn-danger btn-sm"
+                                        <button type="submit" class="btn btn-danger btn-sm btn-delete"
                                                 title="{{ trans('adminlte_lang::message.delete') }}"
                                                 data-destroy>
                                             <i class="fa fa-trash" aria-hidden="true"></i>
