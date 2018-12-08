@@ -15,7 +15,7 @@ return [
     
     'logged'                  => 'Você esta conectado!',
     'someproblems'            => 'Houve algum problema com sua informação.',
-    'siginsession'            => 'Inscreva-se para iniciar sua sessão',
+    'siginsession'            => 'Acesse para iniciar sua sessão',
     'remember'                => 'Permaneça conectado',
     'buttonsign'              => 'Entrar',
     'forgotpassword'          => 'Esqueci minha senha',
@@ -148,4 +148,6 @@ return [
     'product'                 => 'Produto',
     'products'                => 'Produtos',
     'price'                   => 'Preço',
+    'order'                   => 'Pedido',
+    'orders'                  => 'Pedidos',
 ];

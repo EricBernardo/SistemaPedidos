@@ -19,7 +19,7 @@
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
 
-                    <form method="POST" action="{{ route('product.update', [ 'id' => $result['id'] ]) }}">
+                    <form method="POST" action="{{ url('order/update/'. $result['id']) }}">
 
                         @method('PUT')
 
@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="form-group col-md-12">
-                                <a href="{{ route('product.index') }}" class="btn btn-default pull-left">
+                                <a href="{{ route('order.index') }}" class="btn btn-default pull-left">
                                     {{ trans('adminlte_lang::message.back') }}
                                 </a>
                                 <input type="submit" class="btn btn-info pull-right"

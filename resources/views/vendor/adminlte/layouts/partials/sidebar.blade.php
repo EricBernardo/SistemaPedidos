@@ -38,6 +38,11 @@
                     <span>{{ trans('adminlte_lang::message.products') }}</span>
                 </a>
             </li>
+            <li class="{{ request()->is(['order', 'order/*'])? 'active' : '' }}">
+                <a href="{{ url('order') }}"><i class='fa fa-shopping-cart'></i>
+                    <span>{{ trans('adminlte_lang::message.orders') }}</span>
+                </a>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

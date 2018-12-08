@@ -12,16 +12,14 @@
 
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">{{ trans('adminlte_lang::message.edit') }}</h3>
+                    <h3 class="box-title">{{ trans('adminlte_lang::message.register') }}</h3>
                 </div>
                 <div class="box-body">
 
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
-
-                    <form method="POST" action="{{ route('product.update', [ 'id' => $result['id'] ]) }}">
-
-                        @method('PUT')
+                    {!! Session::get('post') !!}
+                    <form method="POST" action="{{ url('order/store') }}">
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -29,16 +27,16 @@
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.title') }}:</label>
-                                <input type="text" name="title" value="{{$result['title']}}" class="form-control">
+                                <input type="text" name="title" class="form-control" value="{{ old('title') }}">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.price') }}:</label>
-                                <input type="text" name="price" value="{{number_format($result['price'],2,',','.')}}" class="form-control">
+                                <input type="text" name="price" class="form-control" value="{{ old('price') }}">
                             </div>
 
                             <div class="form-group col-md-12">
-                                <a href="{{ route('product.index') }}" class="btn btn-default pull-left">
+                                <a href="{{ route('order.index') }}" class="btn btn-default pull-left">
                                     {{ trans('adminlte_lang::message.back') }}
                                 </a>
                                 <input type="submit" class="btn btn-info pull-right"

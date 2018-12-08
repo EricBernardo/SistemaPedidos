@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductRequest;
-use App\Services\ProductServices;
+use App\Http\Requests\OrderRequest;
+use App\Services\OrderServices;
 
 /**
- * Class ProductController
+ * Class OrderController
  * @package App\Http\Controllers
  */
-class ProductController extends Controller
+class OrderController extends Controller
 {
 
     private $services;
@@ -17,9 +17,9 @@ class ProductController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param ProductServices $services
+     * @param OrderServices $services
      */
-    public function __construct(ProductServices $services)
+    public function __construct(OrderServices $services)
     {
         $this->middleware('auth');
         $this->services = $services;
@@ -28,15 +28,15 @@ class ProductController extends Controller
     public function index()
     {
         $results = $this->services->paginate();
-        return view('adminlte::pages.product.index', compact('results'));
+        return view('adminlte::pages.order.index', compact('results'));
     }
 
     public function create()
     {
-        return view('adminlte::pages.product.create');
+        return view('adminlte::pages.order.create');
     }
 
-    public function store(ProductRequest $request)
+    public function store(OrderRequest $request)
     {
         return $this->services->create($request->all());
     }
@@ -44,10 +44,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         $result = $this->services->show($id);
-        return view('adminlte::pages.product.edit', compact('result'));
+        return view('adminlte::pages.order.edit');
     }
 
-    public function update(ProductRequest $request, $id)
+    public function update(OrderRequest $request, $id)
     {
         return $this->services->update($request->all(), $id);
     }

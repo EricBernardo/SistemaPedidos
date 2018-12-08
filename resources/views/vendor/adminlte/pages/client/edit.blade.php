@@ -19,7 +19,7 @@
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
 
-                    <form method="POST" action="{{ url('client/update/'. $result['id']) }}">
+                    <form method="POST" action="{{ route('client.update', [ 'id' => $result['id'] ]) }}">
 
                         @method('PUT')
 

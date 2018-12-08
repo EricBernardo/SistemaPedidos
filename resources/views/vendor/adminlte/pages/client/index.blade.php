@@ -27,12 +27,12 @@
                     </div>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
+                <div class="box-body no-padding">
 
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
 
-                    <table class="table table-bordered">
+                    <table class="table table-striped table-hover">
                         <tbody>
                         <tr>
                             <th style="width: 10px">#</th>
