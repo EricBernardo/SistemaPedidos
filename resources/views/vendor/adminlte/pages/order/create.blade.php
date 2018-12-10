@@ -13,87 +13,94 @@
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
 
-                    <form method="POST" action="{{ url('order/store') }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="card">
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col" width="120">Quantidade</th>
+                                <th scope="col" width="120">Preço</th>
+                                <th scope="col" width="200" class="text-right">Ação</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h6 class="title text-truncate">Product name goes here </h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <select class="form-control">
+                                        @for($x = 1; $x <= 100; $x++)
+                                            <option>{{$x}}</option>
+                                        @endfor
+                                    </select>
+                                </td>
+                                <td>
+                                    <div class="price-wrap">
+                                        <var class="price">R$ 450</var>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <a href="" class="btn btn-outline-danger btn-round">Remove</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
                         <div class="row">
-                            <div class="form-group col-xs-12 col-md-4">
-                                <label>{{ trans('adminlte_lang::message.client') }}:</label>
-                                <select class="form-control" name="client_id">
-                                    <option value="">Selecione</option>
-                                    @foreach($clients as $client)
-                                        <option value="{{$client['id']}}" {{old('client_id') == $client['id'] ? 'selected' : '' }}>{{$client['title']}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group col-xs-12 col-md-4">
-                                <label>{{ trans('adminlte_lang::message.situation') }}:</label>
-                                <select class="form-control" name="paid">
-                                    <option value="0" {{old('paid') == '0' ? 'selected' : '' }}>{{ trans('adminlte_lang::message.no_paid') }}</option>
-                                    <option value="1" {{old('paid') == '0' ? 'selected' : '' }}>{{ trans('adminlte_lang::message.paid') }}</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-xs-12 col-md-4">
-                                <label>{{ trans('adminlte_lang::message.discount') }}:</label>
-                                <input type="text" name="discount" class="form-control" value="{{ old('discount') }}">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="box">
-                                    <div class="box-header">
-                                        <h3 class="box-title">{{ trans('adminlte_lang::message.products') }}</h3>
-                                        <button class="btn btn-success pull-right">{{ trans('adminlte_lang::message.add_product') }}</button>
+
+                            <div class="col-xs-12">
+
+                                <div class="row">
+
+                                    <div class="col-xs-12 col-md-9">
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-4">
+                                                <div class="form-group">
+                                                    <label><strong>Desconto</strong></label>
+                                                    <input type="text" class="form-control" placeholder="R$ 0,00">
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="box-body no-padding">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <th style="width: 10px">#</th>
-                                                <th>{{ trans('adminlte_lang::message.product') }}</th>
-                                                <th style="width: 40px">{{ trans('adminlte_lang::message.quantity') }}</th>
-                                                <th>{{ trans('adminlte_lang::message.price') }}</th>
-                                                <th>-</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1.</td>
-                                                <td>
-                                                    <select class="form-control" name="product_id[]">
-                                                        @foreach($products as $product)
-                                                            <option data-price="{{$product['price']}}"
-                                                                    value="{{$product['id']}}">{{$product['title']}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </td>
-                                                <td class="price">
-                                                    R$ {{number_format($products[0]['price'],2,',','.')}}</td>
-                                                <td><input type="number" name="quantity[]" min="1" value="1"
-                                                           class="form-control"></td>
-                                                <td>
-                                                    <button type="submit" class="btn btn-danger btn-sm btn-delete"
-                                                            title="{{ trans('adminlte_lang::message.remove') }}"
-                                                            data-destroy>
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                        {{ trans('adminlte_lang::message.remove') }}
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+
+                                    <div class="col-xs-12 col-md-3 text-right">
+
+                                        <p><h4><strong>Resumo do pedido</strong></h4></p>
+
+                                        <p><strong>Subtotal(4 produtos): </strong> R$ 450,00</p>
+                                        <p><strong>Desconto: </strong> R$ 0,00</p>
+                                        <p><strong>Total: </strong> R$ 650,00</p>
+
                                     </div>
+
                                 </div>
+
                             </div>
-                            <div class="col-md-6">
-                                <div class="box">
-                                    <div class="box-header">
-                                        <h3 class="box-title">Subtotal</h3>
-                                    </div>
-                                    <div class="box-body no-padding">
-                                        
-                                    </div>
-                                </div>
+
+                            <div class="col-xs-12">
+
+                                <a href="{{ route('order.index') }}" class="btn btn-default pull-left">
+                                    {{ trans('adminlte_lang::message.back') }}
+                                </a>
+                                <input type="submit" class="btn btn-info pull-right"
+                                       value="{{ trans('adminlte_lang::message.save') }}"/>
+
                             </div>
+
                         </div>
-                    </form>
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 @endsection
