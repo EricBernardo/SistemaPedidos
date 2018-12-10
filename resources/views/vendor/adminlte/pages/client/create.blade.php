@@ -18,7 +18,7 @@
 
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
-                    {!! Session::get('post') !!}
+
                     <form method="POST" action="{{ route('client.store') }}">
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -16,12 +16,13 @@ class CreateOrderProductsTable extends Migration
         Schema::create('order_products', function (Blueprint $table) {
             $table->increments('id');
             $table->decimal('price', 11, 2);
+            $table->integer('quantity');
             $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->delete('cascade')->update('cascade');
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      *

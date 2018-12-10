@@ -17,7 +17,7 @@
 
                         <div class="btn-group">
 
-                            <a href="{{ route('product.create') }}" class="btn btn-success btn-md">
+                            <a href="{{ route('order.create') }}" class="btn btn-success btn-md">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 {{ trans('adminlte_lang::message.create') }}
                             </a>
@@ -47,7 +47,7 @@
                                 <td>{{$result['title']}}</td>
                                 <td class="hidden-xs">R$ {{number_format($result['price'],2,',','.')}}</td>
                                 <td>
-                                    <a href="{{ route('product.edit', [ 'id' => $result['id'] ]) }}"
+                                    <a href="{{ route('order.edit', [ 'id' => $result['id'] ]) }}"
                                        class="btn btn-primary btn-sm">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
                                         {{ trans('adminlte_lang::message.edit') }}
@@ -56,7 +56,7 @@
                                 <td>
 
                                     <form method="POST"
-                                          action="{{ route('product.destroy', [ 'id' => $result['id'] ]) }}"
+                                          action="{{ route('order.destroy', [ 'id' => $result['id'] ]) }}"
                                           class="display-inline" role="form">
 
                                         <input type="hidden" name="_method" value="DELETE">

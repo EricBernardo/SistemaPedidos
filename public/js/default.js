@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $('.btn-delete').click(function () {
-        return confirm('Deseja realmente deletar?');
+        return confirm('Deseja realmente fazer isso?');
     });
 
     $('[name="cnpj"]').inputmask('99.999.999/9999-99', {"placeholder": ""});
@@ -124,4 +124,26 @@ $(document).ready(function () {
 
     });
 
+    $('[name="product_id[]"], [name="quantity[]"]').change(function () {
+
+        let e = $(this);
+
+        let price = e.parents('tr').find('[name="product_id[]"] > option:selected').attr('data-price');
+
+        let quantity = e.parents('tr').find('[name="quantity[]"]').val();
+
+        if (!price > 0) {
+            price = '-';
+        }
+
+        e.parents('tr').find('.price').text('R$ ' + numberToReal(price));
+
+        e.parents('tr').find('.total').text('R$ ' + numberToReal(price * quantity));
+
+    });
+
 });
+
+function numberToReal(number) {
+    return parseFloat(number, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
+}
