@@ -159,5 +159,8 @@ return [
     'total'                   => 'Total',
     'subtotal'                => 'Subtotal',
     'remove'                  => 'Remover',
+    'action'                  => 'Ação',
+    'overview_order'          => 'Resumo do pedido',
+    'select_client'           => 'Selecione um cliente',
 
 ];

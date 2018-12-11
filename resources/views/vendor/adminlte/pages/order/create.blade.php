@@ -3,11 +3,15 @@
     {{ trans('adminlte_lang::message.home') }}
 @endsection
 @section('main-content')
-    <section class="content">
+    <section
+            class="content">
         <div class="row">
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">{{ trans('adminlte_lang::message.register') }}</h3>
+                    <h3 class="box-title">
+                        {{ trans('adminlte_lang::message.order') }}
+                    </h3>
+                    <button class="btn btn-success pull-right btn-product-add">{{ trans('adminlte_lang::message.add_product') }}</button>
                 </div>
                 <div class="box-body">
                     @include('adminlte::components.errors')
@@ -15,13 +19,30 @@
 
                     <div class="card">
 
+                        <div class="row">
+
+                            <div class="form-group col-xs-12 col-md-3">
+
+                                <label><strong>{{ trans('adminlte_lang::message.client') }}:</strong></label>
+
+                                <select class="form-control" name="client_id[]">
+                                    <option value="">{{ trans('adminlte_lang::message.select_client') }}</option>
+                                    @foreach($clients as $client)
+                                        <option value="{{$client['id']}}">{{$client['title']}}</option>
+                                    @endforeach
+                                </select>
+
+                            </div>
+
+                        </div>
+
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col" width="120">Quantidade</th>
-                                <th scope="col" width="120">Preço</th>
-                                <th scope="col" width="200" class="text-right">Ação</th>
+                                <th scope="col">{{ trans('adminlte_lang::message.product') }}</th>
+                                <th scope="col" width="120">{{ trans('adminlte_lang::message.quantity') }}</th>
+                                <th scope="col" width="120">{{ trans('adminlte_lang::message.price') }}</th>
+                                <th scope="col" width="120" class="text-right">{{ trans('adminlte_lang::message.action') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -29,12 +50,19 @@
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-                                            <h6 class="title text-truncate">Product name goes here </h6>
+                                            <select class="form-control"
+                                                    name="product_id[]">
+                                                @foreach($products as $product)
+                                                    <option data-price="{{$product['price']}}" value="{{$product['id']}}">
+                                                        {{$product['title']}}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <select class="form-control">
+                                    <select class="form-control" name="quantity[]">
                                         @for($x = 1; $x <= 100; $x++)
                                             <option>{{$x}}</option>
                                         @endfor
@@ -42,11 +70,15 @@
                                 </td>
                                 <td>
                                     <div class="price-wrap">
-                                        <var class="price">R$ 450</var>
+                                        @foreach($products as $product)
+                                            <var class="price product-price">R$ {{number_format($product['price'],2,',','.')}}</var>
+                                            @break
+                                        @endforeach
+
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <a href="" class="btn btn-outline-danger btn-round">Remove</a>
+                                    <a class="btn btn-outline-danger btn-round btn-remove">{{ trans('adminlte_lang::message.remove') }}</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -63,8 +95,8 @@
                                         <div class="row">
                                             <div class="col-xs-12 col-md-4">
                                                 <div class="form-group">
-                                                    <label><strong>Desconto</strong></label>
-                                                    <input type="text" class="form-control" placeholder="R$ 0,00">
+                                                    <label><strong>{{ trans('adminlte_lang::message.discount') }}</strong></label>
+                                                    <input type="text" class="form-control" name="discount" placeholder="R$ 0,00">
                                                 </div>
                                             </div>
                                         </div>
@@ -73,11 +105,27 @@
 
                                     <div class="col-xs-12 col-md-3 text-right">
 
-                                        <p><h4><strong>Resumo do pedido</strong></h4></p>
+                                        <p><h4 class="text-bold">{{ trans('adminlte_lang::message.overview_order') }}</h4></p>
 
-                                        <p><strong>Subtotal(4 produtos): </strong> R$ 450,00</p>
-                                        <p><strong>Desconto: </strong> R$ 0,00</p>
-                                        <p><strong>Total: </strong> R$ 650,00</p>
+                                        <p>
+                                            <strong>{{ trans('adminlte_lang::message.subtotal') }}</strong>
+                                            <strong class="text-lowercase">(<span class="order-total-product">1</span> {{ trans('adminlte_lang::message.product') }}(s)):</strong>
+                                            @foreach($products as $product)
+                                                <span class="order-subtotal">R$ {{number_format($product['price'],2,',','.')}}</span>
+                                                @break
+                                            @endforeach
+                                        </p>
+                                        <p>
+                                            <strong>{{ trans('adminlte_lang::message.discount') }}: </strong>
+                                            <span class="order-discount">R$ 0,00</span>
+                                        </p>
+                                        <p>
+                                            <strong>{{ trans('adminlte_lang::message.total') }}: </strong>
+                                            @foreach($products as $product)
+                                                <span class="order-total">R$ {{number_format($product['price'],2,',','.')}}</span>
+                                                @break
+                                            @endforeach
+                                        </p>
 
                                     </div>
 
@@ -87,11 +135,8 @@
 
                             <div class="col-xs-12">
 
-                                <a href="{{ route('order.index') }}" class="btn btn-default pull-left">
-                                    {{ trans('adminlte_lang::message.back') }}
-                                </a>
-                                <input type="submit" class="btn btn-info pull-right"
-                                       value="{{ trans('adminlte_lang::message.save') }}"/>
+                                <a href="{{ route('order.index') }}" class="btn btn-default pull-left">{{ trans('adminlte_lang::message.back') }}</a>
+                                <input type="submit" class="btn btn-info pull-right" value="{{ trans('adminlte_lang::message.save') }}"/>
 
                             </div>
 

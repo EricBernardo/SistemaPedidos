@@ -10,6 +10,10 @@
 
 <script src="{{ asset('/js/default.js') . '?v=' . time() }}" type="text/javascript"></script>
 
+<script src="{{ asset('/js/client.js') . '?v=' . time() }}" type="text/javascript"></script>
+
+<script src="{{ asset('/js/order.js') . '?v=' . time() }}" type="text/javascript"></script>
+
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
@@ -19,5 +23,5 @@
         'csrfToken' => csrf_token(),
     ]) !!};
 
-    var base_url = {!! json_encode(url('/')) !!} + '/';
+    var base_url = {!! json_encode(url('/')) !!} +'/';
 </script>

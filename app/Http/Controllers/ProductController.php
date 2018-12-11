@@ -31,6 +31,15 @@ class ProductController extends Controller
         return view('adminlte::pages.product.index', compact('results'));
     }
 
+    public function all()
+    {
+        $results = $this->services->all();
+        if (request()->wantsJson()) {
+            return $results;
+        }
+    }
+
+
     public function create()
     {
         return view('adminlte::pages.product.create');
