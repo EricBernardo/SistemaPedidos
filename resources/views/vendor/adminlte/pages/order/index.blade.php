@@ -51,10 +51,10 @@
                                 <td>{{$result['created_at']}}</td>
                                 <td>{{($result['paid']?'Sim': 'Não')}}</td>
                                 <td>
-                                    <a href="{{ route('order.edit', [ 'id' => $result['id'] ]) }}"
+                                    <a href="{{ route('order.view', [ 'id' => $result['id'] ]) }}"
                                        class="btn btn-primary btn-sm">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        {{ trans('adminlte_lang::message.edit') }}
+                                        {{ trans('adminlte_lang::message.view') }}
                                     </a>
                                 </td>
                                 <td>

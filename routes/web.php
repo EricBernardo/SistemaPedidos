@@ -40,8 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('order', 'OrderController@index')->name('order.index');
     Route::get('order/create', 'OrderController@create')->name('order.create');
-    Route::get('order/edit/{id}', 'OrderController@edit')->name('order.edit');
-    Route::put('order/update/{id}', 'OrderController@update')->name('order.update');;
+    Route::get('order/view/{id}', 'OrderController@view')->name('order.view');
     Route::post('order/store', 'OrderController@store')->name('order.store');;
     Route::delete('order/delete/{id}', 'OrderController@destroy')->name('order.destroy');
 

@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients')->delete('cascade')->update('cascade');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
             $table->decimal('subtotal', '11', 2);
             $table->decimal('discount', '11', 2)->default(0);
             $table->decimal('total', '11', 2);

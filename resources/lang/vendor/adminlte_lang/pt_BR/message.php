@@ -163,5 +163,8 @@ return [
     'overview_order'          => 'Resumo do pedido',
     'select_client'           => 'Selecione um cliente',
     'date'                    => 'Data',
+    'yes'                     => 'Sim',
+    'no'                      => 'Não',
+    'view'                    => 'Visualizar',
 
 ];

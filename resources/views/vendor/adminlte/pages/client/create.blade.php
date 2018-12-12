@@ -19,7 +19,7 @@
                     @include('adminlte::components.errors')
                     @include('adminlte::components.message')
 
-                    <form method="POST" action="{{ route('client.store') }}">
+                    <form method="POST" action="{{ route('client.store') }}" data-action="{{ route('order.create') }}">
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
