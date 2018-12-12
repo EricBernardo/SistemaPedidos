@@ -14,4 +14,9 @@ class Order extends Model
         'paid',
     ];
 
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
 }

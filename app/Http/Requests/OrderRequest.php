@@ -24,7 +24,8 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'client_id',
+            'client_id'  => 'required',
+            'product_id' => 'required',
         ];
     }
 }

@@ -36,16 +36,20 @@
                         <tbody>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>{{ trans('adminlte_lang::message.title') }}</th>
-                            <th class="hidden-xs">{{ trans('adminlte_lang::message.price') }}</th>
+                            <th>{{ trans('adminlte_lang::message.client') }}</th>
+                            <th>{{ trans('adminlte_lang::message.price') }}</th>
+                            <th>{{ trans('adminlte_lang::message.date') }}</th>
+                            <th>{{ trans('adminlte_lang::message.paid') }}?</th>
                             <th>-</th>
                             <th>-</th>
                         </tr>
                         @foreach($results as $result)
                             <tr>
                                 <td style="width: 10px">{{$result['id']}}</td>
-                                <td>{{$result['title']}}</td>
-                                <td class="hidden-xs">R$ {{number_format($result['price'],2,',','.')}}</td>
+                                <td>{{$result['client']['title']}}</td>
+                                <td class="hidden-xs">R$ {{number_format($result['total'],2,',','.')}}</td>
+                                <td>{{$result['created_at']}}</td>
+                                <td>{{($result['paid']?'Sim': 'Não')}}</td>
                                 <td>
                                     <a href="{{ route('order.edit', [ 'id' => $result['id'] ]) }}"
                                        class="btn btn-primary btn-sm">

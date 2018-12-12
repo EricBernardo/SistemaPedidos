@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Entities\Client;
-use App\Entities\Product;
 use App\Http\Requests\OrderRequest;
 use App\Services\OrderServices;
 
@@ -36,8 +35,7 @@ class OrderController extends Controller
     public function create()
     {
         $clients = Client::all(['id', 'title']);
-        $products = Product::all(['id', 'title', 'price']);
-        return view('adminlte::pages.order.create', compact('clients', 'products'));
+        return view('adminlte::pages.order.create', compact('clients'));
     }
 
     public function store(OrderRequest $request)

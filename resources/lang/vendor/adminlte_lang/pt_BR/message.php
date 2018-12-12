@@ -162,5 +162,6 @@ return [
     'action'                  => 'Ação',
     'overview_order'          => 'Resumo do pedido',
     'select_client'           => 'Selecione um cliente',
+    'date'                    => 'Data',
 
 ];

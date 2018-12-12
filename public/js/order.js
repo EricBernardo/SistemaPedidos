@@ -45,7 +45,7 @@ $(document).ready(function () {
             html += '</div>';
             html += '</td>';
             html += '<td class="text-right">';
-            html += '<a class="btn btn-outline-danger btn-round btn-remove">Remover</a>';
+            html += '<a class="btn btn-danger btn-round btn-remove btn-sm"><i class="fa fa-remove"/> Remover</a>';
             html += '</td>';
             html += '</tr>';
 
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
         });
 
-    });
+    }).trigger('click');
 
 });
 
@@ -120,11 +120,8 @@ function calculate_order() {
 
 function event_calcule_order() {
 
-    $('[name="product_id[]"], [name="quantity[]"], [name="discount"]').unbind('change');
-    $('[name="product_id[]"], [name="quantity[]"], [name="discount"]').change(function () {
-
+    $('[name="product_id[]"], [name="quantity[]"], [name="discount"]').unbind('change').change(function () {
         calculate_order();
-
     });
 
     event_remove_product();
@@ -133,21 +130,55 @@ function event_calcule_order() {
 
 function event_remove_product() {
 
-    $('.btn-remove').unbind('click');
+    $('.btn-remove').unbind('click').click(function () {
 
-    $('.btn-remove').click(function () {
-
-        if ($('.btn-remove').length > 1) {
-
-            if (confirm('Deseja realmente fazer isso?')) {
-                $(this).parents('tr').remove();
-                calculate_order();
-            }
-
-        } else {
-            alert('O pedido tem que ter pelo menos 1 produto');
+        if (confirm('Deseja realmente fazer isso?')) {
+            $(this).parents('tr').remove();
+            calculate_order();
         }
 
     });
+
+}
+
+function create_order() {
+
+    let form = $('#form-order-create');
+
+    form.find('input[type="submit"]').attr('disabled', true);
+
+    $('.alert-danger').addClass('hide');
+    $('.alert-danger, .alert-success').addClass('hide');
+
+    $.ajax({
+        url: base_url + 'order/store',
+        type: 'POST',
+        dataType: 'json',
+        data: form.serialize()
+    }).done(function () {
+
+        $('[name="client_id"], [name="discount"]').val('');
+        $('[name="paid"]').val(0).change();
+        $('.card tbody tr').remove();
+
+        $('.alert-success').removeClass('hide');
+
+        $('.btn-product-add').trigger('click');
+
+    }).fail(function (data) {
+
+        $('.alert-danger ul li').remove();
+
+        $.each(data.responseJSON.errors, function (key, value) {
+            $('.alert-danger ul').append('<li>' + value + '</li>')
+        });
+
+        $('.alert-danger').removeClass('hide');
+
+    }).always(function () {
+
+        form.find('input[type="submit"]').attr('disabled', false);
+
+    })
 
 }
