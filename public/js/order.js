@@ -60,7 +60,9 @@ $(document).ready(function () {
 
         });
 
-    }).trigger('click');
+    });
+
+    $('[data-trigger-click="true"]').trigger('click');
 
 });
 
@@ -141,29 +143,38 @@ function event_remove_product() {
 
 }
 
-function create_order() {
+function save_order() {
 
     let form = $('#form-order-create');
 
+    let action = form.attr('data-action');
+
     form.find('input[type="submit"]').attr('disabled', true);
 
-    $('.alert-danger').addClass('hide');
     $('.alert-danger, .alert-success').addClass('hide');
 
     $.ajax({
-        url: base_url + 'order/store',
+        url: action,
         type: 'POST',
         dataType: 'json',
         data: form.serialize()
     }).done(function () {
 
-        $('[name="client_id"], [name="discount"]').val('');
-        $('[name="paid"]').val(0).change();
-        $('.card tbody tr').remove();
+        if (form.find('[name="_method"]').val() == 'PUT') {
 
-        $('.alert-success').removeClass('hide');
+            $('.alert-success').text('Updated.').removeClass('hide');
 
-        $('.btn-product-add').trigger('click');
+        } else {
+
+            $('[name="client_id"], [name="discount"]').val('');
+            $('[name="paid"]').val(0).change();
+            $('.card tbody tr').remove();
+
+            $('.alert-success').text('Created.').removeClass('hide');
+
+            $('.btn-product-add').trigger('click');
+
+        }
 
     }).fail(function (data) {
 

@@ -43,16 +43,21 @@ class OrderController extends Controller
         return $this->services->create($request->all());
     }
 
-    public function view($id)
+    public function edit($id)
     {
         $result = $this->services->show($id);
-        return view('adminlte::pages.order.view', compact('result', 'clients'));
+        $clients = Client::all(['id', 'title']);
+        return view('adminlte::pages.order.edit', compact('result', 'clients'));
+    }
+
+    public function update(OrderRequest $request, $id)
+    {
+        return $this->services->update($request->all(), $id);
     }
 
     public function destroy($id)
     {
         return $this->services->delete($id);
     }
-
 
 }

@@ -47,14 +47,13 @@
                             <tr>
                                 <td style="width: 10px">{{$result['id']}}</td>
                                 <td>{{$result['client']['title']}}</td>
-                                <td class="hidden-xs">R$ {{number_format($result['total'],2,',','.')}}</td>
-                                <td>{{$result['created_at']}}</td>
+                                <td>R$ {{number_format($result['total'],2,',','.')}}</td>
+                                <td>{{date('d/m/Y H:i', strtotime($result['created_at']))}}</td>
                                 <td>{{($result['paid']?'Sim': 'Não')}}</td>
                                 <td>
-                                    <a href="{{ route('order.view', [ 'id' => $result['id'] ]) }}"
-                                       class="btn btn-primary btn-sm">
+                                    <a href="{{ route('order.edit', [ 'id' => $result['id'] ]) }}" class="btn btn-primary btn-sm">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        {{ trans('adminlte_lang::message.view') }}
+                                        {{ trans('adminlte_lang::message.edit') }}
                                     </a>
                                 </td>
                                 <td>
@@ -68,8 +67,7 @@
                                         {{ csrf_field() }}
 
                                         <button type="submit" class="btn btn-danger btn-sm btn-delete"
-                                                title="{{ trans('adminlte_lang::message.delete') }}"
-                                                data-destroy>
+                                                title="{{ trans('adminlte_lang::message.delete') }}" data-destroy>
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                             {{ trans('adminlte_lang::message.delete') }}
                                         </button>

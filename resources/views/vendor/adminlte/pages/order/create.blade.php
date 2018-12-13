@@ -12,7 +12,7 @@
                     <h3 class="box-title">
                         {{ trans('adminlte_lang::message.order') }}
                     </h3>
-                    <button class="btn btn-success pull-right btn-product-add">{{ trans('adminlte_lang::message.add_product') }}</button>
+                    <button class="btn btn-success pull-right btn-product-add" data-trigger-click="true">{{ trans('adminlte_lang::message.add_product') }}</button>
                 </div>
 
                 <div class="box-body">
@@ -28,7 +28,7 @@
                         Created.
                     </div>
 
-                    <form method="POST" action="javascript:create_order()" id="form-order-create">
+                    <form method="POST" action="javascript:save_order()" data-action="{{ route('order.store') }}" id="form-order-create">
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
