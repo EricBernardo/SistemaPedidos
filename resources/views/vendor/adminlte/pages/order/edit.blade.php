@@ -6,6 +6,16 @@
     <section
             class="content">
         <div class="row">
+
+            <div class="alert alert-danger alert-dismissible hide">
+                <h4><i aria-hidden="true" class="icon fa fa-ban"></i>
+                    Errors
+                </h4>
+                <ul></ul>
+            </div>
+
+            <div class="alert alert-success alert-dismissible hide"></div>
+
             <div class="box box-info">
 
                 <div class="box-header">
@@ -16,17 +26,6 @@
                 </div>
 
                 <div class="box-body">
-
-                    <div class="alert alert-danger alert-dismissible hide">
-                        <h4><i aria-hidden="true" class="icon fa fa-ban"></i>
-                            Errors
-                        </h4>
-                        <ul></ul>
-                    </div>
-
-                    <div class="alert alert-success alert-dismissible hide">
-                        Created.
-                    </div>
 
                     <form method="POST" action="javascript:save_order()" data-action="{{ route('order.update', [ 'id' => $result['id'] ]) }}" id="form-order-create">
 

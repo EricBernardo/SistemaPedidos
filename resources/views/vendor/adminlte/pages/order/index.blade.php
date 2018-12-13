@@ -10,6 +10,9 @@
 
         <div class="row">
 
+            @include('adminlte::components.errors')
+            @include('adminlte::components.message')
+
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">{{ trans('adminlte_lang::message.listing') }}</h3>
@@ -26,11 +29,8 @@
 
                     </div>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body no-padding">
 
-                    @include('adminlte::components.errors')
-                    @include('adminlte::components.message')
+                <div class="box-body no-padding">
 
                     <table class="table table-striped table-hover">
                         <tbody>

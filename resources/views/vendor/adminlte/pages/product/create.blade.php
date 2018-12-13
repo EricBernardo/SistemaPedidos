@@ -10,14 +10,14 @@
 
         <div class="row">
 
+            @include('adminlte::components.errors')
+            @include('adminlte::components.message')
+
             <div class="box box-info">
                 <div class="box-header">
                     <h3 class="box-title">{{ trans('adminlte_lang::message.register') }}</h3>
                 </div>
                 <div class="box-body">
-
-                    @include('adminlte::components.errors')
-                    @include('adminlte::components.message')
 
                     <form method="POST" action="{{ route('product.store') }}">
 

@@ -26,11 +26,11 @@
 
                     </div>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body no-padding">
 
-                    @include('adminlte::components.errors')
-                    @include('adminlte::components.message')
+                @include('adminlte::components.errors')
+                @include('adminlte::components.message')
+
+                <div class="box-body no-padding">
 
                     <table class="table table-striped table-hover">
                         <tbody>
