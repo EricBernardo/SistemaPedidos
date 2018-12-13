@@ -166,5 +166,6 @@ return [
     'yes'                     => 'Sim',
     'no'                      => 'Não',
     'view'                    => 'Visualizar',
-
+    'users'                   => 'Usuários',
+    'name'                    => 'Nome',
 ];

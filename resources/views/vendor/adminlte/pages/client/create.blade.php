@@ -27,12 +27,12 @@
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.cnpj') }}:</label>
-                                <input type="text" name="cnpj" class="form-control" value="{{ old('cnpj') }}">
+                                <input type="text" name="cnpj" class="form-control" value="{{ old('cnpj') }}" required>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.title') }}:</label>
-                                <input type="text" name="title" class="form-control" value="{{ old('title') }}">
+                                <input type="text" name="title" class="form-control" value="{{ old('title') }}" required>
                             </div>
 
                             <div class="form-group col-md-6">
@@ -43,17 +43,17 @@
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.phone') }}:</label>
-                                <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
+                                <input type="text" name="phone" class="form-control" value="{{ old('phone') }}" required>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.cep') }}:</label>
-                                <input type="text" name="cep" class="form-control" value="{{ old('cep') }}">
+                                <input type="text" name="cep" class="form-control" value="{{ old('cep') }}" required>
                             </div>
 
                             <div class="form-group col-xs-4 col-md-2">
                                 <label>{{ trans('adminlte_lang::message.state') }}:</label>
-                                <select class="form-control" name="state_id" data-value="{{old('state_id')}}">
+                                <select class="form-control" name="state_id" data-value="{{old('state_id')}}" required>
                                     <option value="">Selecione</option>
                                     @foreach($states as $state)
                                         <option value="{{$state['id']}}">{{$state['abbr']}}</option>
@@ -63,7 +63,7 @@
 
                             <div class="form-group col-xs-8 col-md-4">
                                 <label>{{ trans('adminlte_lang::message.city') }}:</label>
-                                <select class="form-control" name="city_id" data-value="{{old('city_id')}}" data-text="">
+                                <select class="form-control" name="city_id" data-value="{{old('city_id')}}" data-text="" required>
                                     <option value="">Selecione</option>
                                     <option value="">Selecione um estado</option>
                                 </select>
@@ -71,18 +71,18 @@
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.address') }}:</label>
-                                <input type="text" name="address" class="form-control" value="{{ old('address') }}">
+                                <input type="text" name="address" class="form-control" value="{{ old('address') }}" required>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.neighborhood') }}:</label>
                                 <input type="text" name="neighborhood" class="form-control"
-                                       value="{{ old('neighborhood') }}">
+                                       value="{{ old('neighborhood') }}" required>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.number') }}:</label>
-                                <input type="number" name="number" class="form-control" value="{{ old('number') }}">
+                                <input type="number" name="number" class="form-control" value="{{ old('number') }}" required>
                             </div>
 
                             <div class="form-group col-md-6">

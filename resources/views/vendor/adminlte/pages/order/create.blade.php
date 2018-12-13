@@ -39,7 +39,7 @@
 
                                     <label><strong>{{ trans('adminlte_lang::message.client') }}:</strong></label>
 
-                                    <select class="form-control" name="client_id">
+                                    <select class="form-control" name="client_id" required>
                                         <option value="">{{ trans('adminlte_lang::message.select_client') }}</option>
                                         @foreach($clients as $client)
                                             <option value="{{$client['id']}}">{{$client['title']}}</option>

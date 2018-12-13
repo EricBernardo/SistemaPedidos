@@ -27,12 +27,12 @@
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.title') }}:</label>
-                                <input type="text" name="title" class="form-control" value="{{ old('title') }}">
+                                <input type="text" name="title" class="form-control" value="{{ old('title') }}" required>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.price') }}:</label>
-                                <input type="text" name="price" class="form-control" value="{{ old('price') }}">
+                                <input type="text" name="price" class="form-control" value="{{ old('price') }}" required>
                             </div>
 
                             <div class="form-group col-md-12">

@@ -45,6 +45,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('order/store', 'OrderController@store')->name('order.store');;
     Route::delete('order/delete/{id}', 'OrderController@destroy')->name('order.destroy');
 
+    Route::get('user', 'UserController@index')->name('user.index');
+    Route::get('user/create', 'UserController@create')->name('user.create');
+    Route::get('user/edit/{id}', 'UserController@edit')->name('user.edit');
+    Route::put('user/update/{id}', 'UserController@update')->name('user.update');;
+    Route::post('user/store', 'UserController@store')->name('user.store');;
+    Route::delete('user/delete/{id}', 'UserController@destroy')->name('user.destroy');
+
     Route::get("cep/{cep}", function ($cep) {
         return cep($cep)->toJson()->result();
     });
