@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    
     /*
     |--------------------------------------------------------------------------
     | Language Lines
@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    
     'logged'                  => 'Você esta conectado!',
     'someproblems'            => 'Houve algum problema com sua informação.',
     'siginsession'            => 'Acesse para iniciar sua sessão',
@@ -168,4 +168,5 @@ return [
     'view'                    => 'Visualizar',
     'users'                   => 'Usuários',
     'name'                    => 'Nome',
+    'password_confirmation'   => 'Confirmar senha',
 ];
