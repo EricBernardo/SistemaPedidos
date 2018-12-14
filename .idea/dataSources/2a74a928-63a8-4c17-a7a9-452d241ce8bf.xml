@@ -1034,7 +1034,6 @@
     <column id="263" parent="233" name="phone">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="264" parent="233" name="cep">

@@ -27,7 +27,6 @@ class ClientRequest extends FormRequest
             'title'        => 'required',
             'cnpj'         => 'required|cnpj',
             'address'      => 'required',
-            'phone'        => 'required',
             'state_id'     => 'required',
             'city_id'      => 'required',
             'neighborhood' => 'required',
