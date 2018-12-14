@@ -26,13 +26,27 @@
                         <div class="row">
 
                             <div class="form-group col-xs-12">
+                                <label>{{ trans('adminlte_lang::message.role') }}:</label>
+                                <select class="form-control" name="role" required>
+                                    <option value="root" {{ old('role') == 'root' ? 'selected' : '' }}>Root</option>
+                                    <option value="administrator" {{ old('role') == 'administrator' ? 'selected' : '' }}>
+                                        {{ trans('adminlte_lang::message.administrator') }}
+                                    </option>
+                                    <option value="deliveryman" {{ old('role') == 'deliveryman' ? 'selected' : '' }}>
+                                        {{ trans('adminlte_lang::message.deliveryman') }}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-xs-12">
                                 <label>{{ trans('adminlte_lang::message.name') }}:</label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
                             </div>
 
                             <div class="form-group col-xs-12">
                                 <label>{{ trans('adminlte_lang::message.email') }}:</label>
-                                <input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
+                                <input type="email" name="email" class="form-control" value="{{ old('email') }}"
+                                       required>
                             </div>
 
                             <div class="form-group col-xs-12">

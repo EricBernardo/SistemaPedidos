@@ -55,22 +55,26 @@
                                 </td>
                                 <td>
 
-                                    <form method="POST"
-                                          action="{{ route('user.destroy', [ 'id' => $result['id'] ]) }}"
-                                          class="display-inline" role="form">
+                                    @if(!$result->hasRole('root'))
 
-                                        <input type="hidden" name="_method" value="DELETE">
+                                        <form method="POST"
+                                              action="{{ route('user.destroy', [ 'id' => $result['id'] ]) }}"
+                                              class="display-inline" role="form">
 
-                                        {{ csrf_field() }}
+                                            <input type="hidden" name="_method" value="DELETE">
 
-                                        <button type="submit" class="btn btn-danger btn-sm btn-delete"
-                                                title="{{ trans('adminlte_lang::message.delete') }}"
-                                                data-destroy>
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                            {{ trans('adminlte_lang::message.delete') }}
-                                        </button>
+                                            {{ csrf_field() }}
 
-                                    </form>
+                                            <button type="submit" class="btn btn-danger btn-sm btn-delete"
+                                                    title="{{ trans('adminlte_lang::message.delete') }}"
+                                                    data-destroy>
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                {{ trans('adminlte_lang::message.delete') }}
+                                            </button>
+
+                                        </form>
+
+                                    @endif
 
                                 </td>
                             </tr>

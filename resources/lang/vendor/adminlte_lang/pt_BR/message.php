@@ -169,4 +169,7 @@ return [
     'users'                   => 'Usuários',
     'name'                    => 'Nome',
     'password_confirmation'   => 'Confirmar senha',
+    'role'                    => 'Papel',
+    'deliveryman'             => 'Entregador',
+    'administrator'           => 'Administrador',
 ];

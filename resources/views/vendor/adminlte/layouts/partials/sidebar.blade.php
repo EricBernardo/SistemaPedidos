@@ -43,11 +43,14 @@
                     <span>{{ trans('adminlte_lang::message.orders') }}</span>
                 </a>
             </li>
+
+            @role('root')
             <li class="{{ request()->is(['user', 'user/*'])? 'active' : '' }}">
                 <a href="{{ url('user') }}"><i class='fa fa-users'></i>
                     <span>{{ trans('adminlte_lang::message.users') }}</span>
                 </a>
             </li>
+            @endrole
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
