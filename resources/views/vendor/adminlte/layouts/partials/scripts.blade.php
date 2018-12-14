@@ -10,15 +10,15 @@
 
 <script src="{{ asset('/plugins/highcharts/highcharts.js') }}" type="text/javascript"></script>
 
-<script src="{{ asset('/js/order.js') . '?v=' . time() }}" type="text/javascript"></script>
+<script src="{{ asset('/js/order.js') . '?v=1' }}" type="text/javascript"></script>
 
-<script src="{{ asset('/js/default.js') . '?v=' . time() }}" type="text/javascript"></script>
+<script src="{{ asset('/js/default.js') . '?v=1' }}" type="text/javascript"></script>
 
-<script src="{{ asset('/js/client.js') . '?v=' . time() }}" type="text/javascript"></script>
+<script src="{{ asset('/js/client.js') . '?v=1' }}" type="text/javascript"></script>
 
-<script src="{{ asset('/js/order.js') . '?v=' . time() }}" type="text/javascript"></script>
+<script src="{{ asset('/js/order.js') . '?v=1' }}" type="text/javascript"></script>
 
-<script src="{{ asset('/js/dashboard.js') . '?v=' . time() }}" type="text/javascript"></script>
+<script src="{{ asset('/js/dashboard.js') . '?v=1' }}" type="text/javascript"></script>
 
 
 
