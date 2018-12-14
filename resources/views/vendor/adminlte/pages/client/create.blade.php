@@ -43,7 +43,7 @@
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.phone') }}:</label>
-                                <input type="text" name="phone" class="form-control" value="{{ old('phone') }}" required>
+                                <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
                             </div>
 
                             <div class="form-group col-md-6">

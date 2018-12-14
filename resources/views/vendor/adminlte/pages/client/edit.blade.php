@@ -45,7 +45,7 @@
 
                             <div class="form-group col-md-6">
                                 <label>{{ trans('adminlte_lang::message.phone') }}:</label>
-                                <input type="text" name="phone" value="{{$result['phone']}}" class="form-control" required>
+                                <input type="text" name="phone" value="{{$result['phone']}}" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
