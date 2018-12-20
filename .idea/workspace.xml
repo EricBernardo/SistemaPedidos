@@ -2,17 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bba8ef9-2338-46af-ba88-9f023266220e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SistemaPedidos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SistemaPedidos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a74a928-63a8-4c17-a7a9-452d241ce8bf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2a74a928-63a8-4c17-a7a9-452d241ce8bf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/plugins/chartjs/Chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/chartjs/Chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/plugins/chartjs/Chart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/adminlte-app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/adminlte-app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/adminlte-less.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/adminlte-less.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/all-landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/all-landing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/_all-skins.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/_all-skins.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/_all-skins.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/_all-skins.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-black-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-black-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-black-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-black-light.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-black.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-black.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-black.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-black.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-blue-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-blue-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-blue-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-blue-light.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-blue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-blue.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-blue.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-green-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-green-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-green-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-green-light.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-green.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-green.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-green.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-purple-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-purple-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-purple-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-purple-light.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-purple.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-purple.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-purple.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-purple.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-red-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-red-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-red-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-red-light.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-red.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-red.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-red.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-red.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-yellow-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-yellow-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-yellow-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-yellow-light.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-yellow.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-yellow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skins/skin-yellow.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skins/skin-yellow.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/toastr.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/toastr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar04.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/avatar04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/avatar2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/avatar3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar5.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/avatar5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/credit/american-express.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/credit/american-express.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/credit/cirrus.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/credit/cirrus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/credit/mastercard.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/credit/mastercard.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/credit/mestro.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/credit/mestro.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/credit/paypal.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/credit/paypal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/credit/paypal2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/credit/paypal2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/credit/visa.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/credit/visa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/icons.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/icons.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/photo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/photo1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/photo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/photo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jvectormap/jquery-jvectormap-1.2.2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/jvectormap/jquery-jvectormap-1.2.2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/pace/pace.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/pace/pace.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/pace/pace.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/pace/pace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/pace/pace.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/pace/pace.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/pace/pace.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/pace/pace.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/timepicker/bootstrap-timepicker.min.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,23 +167,24 @@
     <session id="1703946335">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="clients" value="1" />
           <entry key="env" value="1" />
-          <entry key="js" value="5" />
-          <entry key="json" value="2" />
+          <entry key="js" value="8" />
+          <entry key="json" value="3" />
           <entry key="model_has_permissions" value="1" />
           <entry key="model_has_roles" value="2" />
           <entry key="php" value="90" />
@@ -144,8 +198,8 @@
         <counts>
           <entry key="Blade" value="38" />
           <entry key="Database Element" value="9" />
-          <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="5" />
+          <entry key="JSON" value="3" />
+          <entry key="JavaScript" value="8" />
           <entry key="PHP" value="52" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="2" />
@@ -156,7 +210,8 @@
           <entry key="cell" value="1" />
           <entry key="dummy" value="8" />
           <entry key="env" value="7" />
-          <entry key="js" value="213" />
+          <entry key="js" value="217" />
+          <entry key="json" value="2" />
           <entry key="php" value="1085" />
           <entry key="txt" value="7" />
         </counts>
@@ -164,7 +219,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="324" />
-          <entry key="JavaScript" value="213" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="217" />
           <entry key="PHP" value="761" />
           <entry key="PLAIN_TEXT" value="22" />
           <entry key="Scratch" value="1" />
@@ -173,7 +229,26 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -230,9 +305,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Requests/ProductRequest.php" />
-        <option value="$PROJECT_DIR$/app/Services/DefaultServices.php" />
-        <option value="$PROJECT_DIR$/resources/views/vendor/adminlte/product/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Services/ProductServices.php" />
         <option value="$PROJECT_DIR$/database/seeds/AdminUserSeeder.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php" />
@@ -281,6 +353,9 @@
         <option value="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/scripts.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/adminlte/home.blade.php" />
         <option value="$PROJECT_DIR$/public/js/dashboard.js" />
+        <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
       </list>
     </option>
   </component>
@@ -296,6 +371,9 @@
       </GulpfileState>
     </gulpfiles>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -414,6 +492,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -424,44 +503,30 @@
             <path>
               <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
               <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
               <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaPedidos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaPedidos" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -515,16 +580,18 @@
       <workItem from="1544707590275" duration="1210000" />
       <workItem from="1544790215557" duration="5266000" />
       <workItem from="1544801411442" duration="3991000" />
+      <workItem from="1545304597192" duration="902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71565000" />
+    <option name="totallyTimeSpent" value="72467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19473264" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19792499" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -578,27 +645,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/vendor/adminlte/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="57" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/htmlheader.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -749,9 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-          <folding>
-            <element signature="e#23#63#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,9 +867,6 @@
           <caret line="4" column="17" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/vendor/adminlte/pages/user/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -923,6 +963,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
         </state>
       </provider>
     </entry>

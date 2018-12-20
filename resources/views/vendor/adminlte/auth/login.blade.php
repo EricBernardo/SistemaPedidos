@@ -9,7 +9,7 @@
     <div id="app">
         <div class="login-box">
             <div class="login-logo">
-                <a href="{{ url('/home') }}"><b>Sistema</b> ACP</a>
+                <a href="{{ url('/home') }}"><b>Rocketz</b> Web</a>
             </div><!-- /.login-logo -->
 
             @if (count($errors) > 0)

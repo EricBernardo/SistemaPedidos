@@ -2,7 +2,9 @@
 
 <!-- JQuery and bootstrap are required by Laravel 5.3 in resources/assets/js/bootstrap.js-->
 <!-- Laravel App -->
-<script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/bootstrap.js') }}" type="text/javascript"></script>
+
+<!-- <script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script> -->
 
 <script src="{{ asset('/plugins/input-mask/jquery.inputmask.js') }}" type="text/javascript"></script>
 
